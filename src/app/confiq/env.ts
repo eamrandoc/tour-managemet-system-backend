@@ -10,7 +10,7 @@ interface EnvConfiq {
 }
 
 const loadEnvVariables = ():EnvConfiq => {
-    const requiredEnvVariables = ["PORT", "DB_URL", "NODE_ENV"];
+    const requiredEnvVariables:string[] = ["PORT", "DB_URL", "NODE_ENV"];
     requiredEnvVariables.forEach((key) => {
         if (!process.env[key]) {
             throw new Error(`Missing required environment variables: ${key}`);
